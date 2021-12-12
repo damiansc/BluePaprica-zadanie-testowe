@@ -8,8 +8,10 @@
 
     if(menuButton.classList.contains('open')){
       headerMenu.classList.add('active');
+      document.body.style.overflow = "hidden"
     } else {
       headerMenu.classList.remove('active');
+      document.body.style.overflow = "unset"
     }
   })
 }) ();
