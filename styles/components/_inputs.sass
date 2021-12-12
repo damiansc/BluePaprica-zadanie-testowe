@@ -1,0 +1,16 @@
+.input
+  font-family: inherit
+  font-size: 20px
+  border-radius: 15px
+  border: 1px solid $color_main_black
+
+  &::placeholder
+    color: #C2C2C2
+
+  &[type="number"]
+    -moz-appearance: textfield
+
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0

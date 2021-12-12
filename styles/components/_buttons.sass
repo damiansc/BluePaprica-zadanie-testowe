@@ -1,0 +1,37 @@
+.button
+  display: inline-block
+  font-size: 16px
+  font-weight: $weight_black
+  font-family: inherit
+  color: inherit
+  text-transform: uppercase
+  text-align: center
+  min-width: 152px
+  padding: 19px
+  border: none
+  border-radius: 28px
+  box-shadow: 0px 20px 59px -10px rgba($color_black, 0.15)
+  cursor: pointer
+  transition: background-color .3s
+
+  &--yellow
+    background-color: $color_yellow
+
+    &:hover
+      background-color: darken($color_yellow, 5%)
+
+  &--big
+    font-size: 20px
+    box-shadow: 0px 34px 64px -10px rgba($color_black, 0.15)
+    padding: 28px
+    border-radius: 47px
+    width: 386px
+    max-width: 100%
+
+    @media screen and(min-width: $break_lg)
+      font-size: 24px
+      padding: 33px
+
+  &--price
+    font-weight: $weight_regular
+    text-transform: none

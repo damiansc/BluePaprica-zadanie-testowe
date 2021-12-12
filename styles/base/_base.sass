@@ -1,0 +1,46 @@
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  
+body
+  font-family: $basic_font
+  color: $color_main_black
+
+ul, ol
+  list-style-type: none
+
+.container
+  width: 100%
+  max-width: 1260px
+  padding: 0 20px
+  margin: 0 auto
+
+.hide-desktop
+  @media screen and(min-width: $break_lg)
+    display: none
+
+.hide-mobile
+  display: none
+
+  @media screen and(min-width: $break_lg)
+    display: block
+
+.fixed-icon
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  bottom: 20px
+  right: 20px
+  width: 80px
+  height: 80px
+  background-color: $color_yellow
+  border-radius: 50%
+  cursor: pointer
+  z-index: 2
+
+  @media screen and(min-width: $break_lg)
+    display: none
+
+

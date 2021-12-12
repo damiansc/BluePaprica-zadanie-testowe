@@ -1,0 +1,178 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  padding: 60px 0 16px
+  z-index: 99
+  transition: box-shadow .3s, padding .3s
+
+  @media screen and(min-width: $break_lg)
+    padding-top: 45px
+
+  &__logo
+    @media screen and(min-width: $break_lg)
+      width: 120px
+      height: auto
+      order: -2
+
+  &.scrolled
+    background-color: $color_white
+    box-shadow: 0px 4px 24px -5px rgba($color_black, 0.15)
+    padding: 16px 0
+
+    .header-menu
+      top: 60px
+
+      &.active
+        height: calc(100vh - 60px)
+  
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+
+    @media screen and(min-width: $break_lg)
+      flex-wrap: nowrap
+
+.header-menu
+  position: absolute
+  top: 105px
+  left: 0
+  right: 0
+  background-color: $color_white
+  text-align: center
+  z-index: 10
+  height: 0
+  overflow: hidden
+  transition: height .5s, top .3s
+
+  @media screen and(min-width: $break_lg)
+    position: static
+    display: flex
+    align-items: center
+    flex-direction: column
+    flex-basis: 100%
+    justify-content: center
+    flex-direction: row
+    background-color: transparent
+    order: -1
+    height: auto
+
+  &__item
+    font-size: 15px
+    font-weight: $weight_medium
+    margin: 72px 0
+
+    @media screen and(min-width: $break_lg)
+      margin: 0 47px 0 0
+      font-size: 16px
+      font-weight: $weight_regular
+    
+    &:first-of-type
+      margin-left: 0
+
+  &__link
+    transition: color .3s
+
+    &:hover
+      color: $color_yellow
+
+  &.active
+    height: calc(100vh - 105px)
+
+.header-lang
+  margin-right: 27px
+  margin-left: auto
+
+.header-hamburger
+  width: 36px
+  height: 27px
+  position: relative
+  cursor: pointer
+
+  &__bar
+    display: block
+    position: absolute
+    height: 2px
+    width: 100%
+    background: $color_main_black
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)
+    transition: .25s ease-in-out
+
+    &:nth-child(1)
+      top: 0px
+      transform-origin: left center
+
+    &:nth-child(2)
+      top: 12px
+      transform-origin: left center
+
+    &:nth-child(3)
+      top: 24px
+      transform-origin: left center
+
+  &.open .header-hamburger__bar
+    &:nth-child(1)
+      transform: rotate(45deg)
+      top: -3px
+      left: 8px
+
+    &:nth-child(2)
+      width: 0%
+      opacity: 0
+
+    &:nth-child(3)
+      transform: rotate(-45deg)
+      top: 24px
+      left: 8px
+
+.dropdown
+  position: relative
+
+  &.active
+    .dropdown-data
+      max-height: 444px
+      opacity: 1
+
+.dropdown-data
+  position: absolute
+  left: -20px
+  top: -10px
+  background-color: $color_white
+  box-shadow: 0px 15px 30px rgba($color_black, 0.1)
+  padding: 0 10px
+  max-height: 0
+  opacity: 0
+  overflow: hidden
+  transition: max-height .3s, opacity .3s
+  z-index: 11
+
+  &__item
+    border-top: 1px solid #C2C2C2
+    padding: 10px 20px 10px 10px
+    font-size: 16px
+
+    &:first-of-type
+      margin-top: 40px
+
+  &__link
+    transition: color .3s
+
+    &:hover
+      color: $color_yellow
+
+.dropdown-trigger
+  display: flex
+  align-items: center
+  position: relative
+  cursor: pointer
+  z-index: 12
+
+  .arrow
+    margin-left: 10px
+    margin-top: -5px
+  
